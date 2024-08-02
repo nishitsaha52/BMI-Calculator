@@ -15,11 +15,11 @@ Here’s how the BMI Calculator app looks in action:
 
 ### Home Screen
 
-![Home Screen](assets/screenshots/home_screen.png)
+![Home Screen](https://github.com/nishitsaha52/BMI-Calculator/blob/main/Screenshot%202024-08-03%20025927.png)
 
 ### Result Screen
 
-![Result Screen](assets/screenshots/result_screen.png)
+![Result Screen](https://github.com/nishitsaha52/BMI-Calculator/blob/main/Screenshot%202024-08-03%20030003.png)
 
 ## 🚀 Getting Started
 
