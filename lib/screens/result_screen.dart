@@ -67,6 +67,7 @@ class ResultScreen extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 64.0, 
                           fontWeight: FontWeight.bold,
+                          color: resultColor,
                         ),
                       ),
                       Text(
@@ -95,7 +96,7 @@ class ResultScreen extends StatelessWidget {
               SizedBox(height: 10.0),
               Text(
                 'Analysis',
-                style: TextStyle(fontSize: 18.0),
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 10.0),
               // Display height and suggested weight range
@@ -111,17 +112,24 @@ class ResultScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Height (cm)'),
-                          Text(height.toStringAsFixed(1)),
+                          Text('Height (cm)', style: TextStyle(fontSize: 16.0)),
+                          Text(height.toStringAsFixed(1), style: TextStyle(fontSize: 16.0)),
                         ],
                       ),
                       SizedBox(height: 10.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Suggested weight (kg)'),
-                          Text('${minWeight.toStringAsFixed(1)} ~ ${maxWeight.toStringAsFixed(1)}'),
+                          Text('Suggested weight (kg)', style: TextStyle(fontSize: 16.0)),
+                          Text('${minWeight.toStringAsFixed(1)} ~ ${maxWeight.toStringAsFixed(1)}', style: TextStyle(fontSize: 16.0)),
                         ],
+                      ),
+                      SizedBox(height: 10.0),
+                      // Additional advice based on BMI
+                      Text(
+                        _getAdvice(),
+                        style: TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic),
+                        textAlign: TextAlign.center,
                       ),
                     ],
                   ),
@@ -132,5 +140,18 @@ class ResultScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  // Function to get advice based on BMI
+  String _getAdvice() {
+    if (bmi < 18.5) {
+      return 'You are underweight. It’s important to ensure you are eating a balanced diet and may consider consulting a healthcare provider.';
+    } else if (bmi < 24.0) {
+      return 'You have a normal weight. Keep up the good work by maintaining a balanced diet and regular exercise.';
+    } else if (bmi < 28.0) {
+      return 'You are overweight. Consider focusing on a balanced diet and increasing physical activity.';
+    } else {
+      return 'You are obese. It’s important to consult with a healthcare provider for personalized advice and support.';
+    }
   }
 }
