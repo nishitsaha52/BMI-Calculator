@@ -11,8 +11,6 @@ Welcome to the BMI Calculator app! This Flutter-powered app helps you easily com
 
 ## 📸 Screenshots
 
-## 📸 Screenshots
-
 Here’s how the BMI Calculator app looks in action:
 
 ### Home Screen
